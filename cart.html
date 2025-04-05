@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <style>
+        .body{
+            background-color: aquamarine;
+        }
+        .cart-message {
+            font-size: 2em;
+            color: blue;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.5s, transform 1s;
+        }
+        
+        .cart-message.show {
+            opacity: 1;
+            transform: translate(-50%, -150%);
+        }
+    </style>
+</head>
+<body class="body">
+
+    <div class="cart-message" id="cartMessage">Item is added to cart!</div>
+
+    <script>
+        window.addEventListener('load', function() {
+            const message = document.getElementById('cartMessage');
+            message.classList.add('show');  
+            setTimeout(() => {
+                message.classList.remove('show'); 
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
